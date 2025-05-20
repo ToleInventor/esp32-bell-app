@@ -1,0 +1,90 @@
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7300 5%, #e4e8eb 70%);
+            margin: 0;
+            padding: 20px;
+            color: var(--dark-color);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-area{
+            background: #ff808a;
+            width: 350px;
+            margin: 0 auto;
+        }
+        .add-button button {
+            background: #ff6915;
+            font: 25px/1.5 Arial, Helvetica;
+            color: #f8ff2b;
+            margin: 0 auto;
+            border-radius: 10px;
+            
+        }
+        .current-alarms {
+            background: #d940ff;
+            width: 350px;   
+            margin: 0 auto;    
+         }
+         .bottom {
+             background: #eeff15;
+             border-radius: 10px;
+         }
+         link {
+             background: #662bff;
+             margin: 0 auto;
+             border-radius: 10px;
+         }
+         .eventype{
+             background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+       
+         }
+         select{
+             background: #ffdc00;
+             width: 200px;
+         }
+         label{
+             background: #00c0ff;
+         }
+         input{
+             background: #f8ff2b;
+         }
+         button{
+             #0003ff
+         }
+         a{
+             color: #eeff15;
+         }
+         .time {
+             color: #ffe715;
+             background: #ff5f2b;
+             border-radius: 50;
+         }
+            
+        
+        
