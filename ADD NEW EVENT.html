@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMART BELL SYSTEM|ADD NEW EVENT</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<div class="header">
+        <div id="current-time" class="time"></div> 
+        <script>
+            function updateTime() {
+              const now = new Date();
+              const hours = String(now.getHours()).padStart(2, '0');
+              const minutes = String(now.getMinutes()).padStart(2, '0');
+              const seconds = String(now.getSeconds()).padStart(2, '0');
+              const currentTimeString = `CURRENT TIME: ${hours}:${minutes}:${seconds}`;
+              document.getElementById('current-time').textContent = currentTimeString;
+            }
+
+            updateTime();
+            setInterval(updateTime, 1000); // Changed from 1ms to 1000ms (1 second)
+        </script>           
+        <div class="header"> BELL SYSTEM|ADD NEW EVENT </div> 
+        <label for="type">Event Type</label>
+    <select id="type_of_event">
+      <option>
+          NORMAL EVENT
+      </option>
+      <option>
+          SPECIAL EVENT
+      </option>
+  </select>
+  <div class="eventype">
+  <p>
+      Normal bell event
+  </p>
+  </div>
+  <label for="title" id="title">EVENT TITLE</label>
+  <input id="tile"></input>
+  <p>
+      <label for="time">
+          TIME
+      </label>
+      <input type=time id="time"></input>
+      </p>
+      <label for="delay">
+          Delay
+      </label>
+      <input type=number placeholder="delay time for the event in seconds" id="delay"></input>
+      <p>
+      <select id="days">
+          <option>
+              Weekdays
+          </option>
+          <option>
+              Weekends 
+          </option>
+          <option>
+              Some days
+          </option>
+      </select>
+      </p>
+        <label for="tones">
+      Tone
+  </label>
+  <select id="tone">
+      <option>
+          better-days
+      </option>
+      <option>
+          canon
+      </option>
+      <option>
+          new day
+      </option>
+      <option>
+          Hello-world
+      </option>
+  </select>
+      </p>
+    <div class="eventype">
+        <p>
+            Special event
+        </p> 
+    </div>
+  <label for="specialDate">
+      DATE
+  </label>
+  <input type=date id="specialDate"></input>
+  <p>
+      <label>
+          TIME
+      </label>
+      <input type=time id="specialTime" placeholder=""></input>
+  </p>
+  <p>
+      <label for="description">
+          description 
+      </label>
+      <input id="specialDescription" placeholder="enter description of the event and where it'll be held"></input>
+  </p>
+  <label for="tones">
+      Tone
+  </label>
+  <select id="specialTone">
+      <option>
+          caxtone
+      </option>
+      <option>
+          Livingston
+      </option>
+      <option>
+          Kirigha
+      </option>
+      <option>
+          blessings
+      </option>
+      <option>
+          chengo
+      </option>
+      <option>
+          good morning africa
+      </option>
+      <option>
+          Kenyan tone
+      </option>
+  </select>
+  <center>
+  <button onClick="leaveSite()">MANAGE EVENTS</button>
+  <button onClick="main()">COMPLETE EVENT CREATION</button>
+  </center>
+  <script>
+      function leaveSite() {
+          // Added leaveSite function which was missing
+          // You might want to redirect to another page
+          // window.location.href = "manage_events.html";
+      }
+      
+      function main() {
+          const eventType = document.getElementById("type_of_event").value;
+          
+          if(eventType === "NORMAL EVENT") {          
+              const title = document.getElementById("tile").value;
+              const time = document.getElementById("time").value;
+              const delay = document.getElementById("delay").value;
+              const frequency = document.getElementById("days").value;
+              const tone = document.getElementById("tone").value;
+              
+              let days;
+              
+              if(frequency === "Weekdays") {
+                  days = "Monday, Tuesday, Wednesday, Thursday and Friday"; 
+              } else if(frequency === "Weekends") {
+                  days = "Saturday and Sunday";
+              } else if(frequency === "Some days") {
+                  days = prompt("enter days");
+                  if(!days) {
+                      alert("You cannot submit an event without specifying the days it'll be repeating");
+                      return; // Instead of calling main() recursively
+                  }
+              }
+              
+              console.log("Normal Event Details:");
+              console.log("Title:", title);
+              console.log("Time:", time);
+              console.log("Delay:", delay);
+              console.log("Days:", days);
+              console.log("Tone:", tone);
+              
+          } else if(eventType === "SPECIAL EVENT") {
+              const date = document.getElementById("specialDate").value;
+              const time = document.getElementById("specialTime").value; // Fixed: was specialTone
+              const description = document.getElementById("specialDescription").value;
+              const tone = document.getElementById("specialTone").value;
+              
+              console.log("Special Event Details:");
+              console.log("Date:", date);
+              console.log("Time:", time);
+              console.log("Description:", description);
+              console.log("Tone:", tone);
+          }
+          
+          alert("Event created successfully!");
+      }      
+  </script>
+</body>
+<footer>
+    *keep in mind that once a special event bell rings, it never rings again,, in fact, the event is deleted.
+</footer>
+</html>

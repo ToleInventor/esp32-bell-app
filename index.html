@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart bell system|manage alarms</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <div class="header">
+        <div id="digital-clock"></div>
+        <script>
+            function updateDigitalClock() {
+              const now = new Date();
+              const hours = String(now.getHours()).padStart(2, '0');
+              const minutes = String(now.getMinutes()).padStart(2, '0');
+              const seconds = String(now.getSeconds()).padStart(2, '0');
+              const currentTimeString = `${hours}:${minutes}:${seconds}`;
+              document.getElementById('digital-clock').textContent = currentTimeString;
+            }
+
+            updateDigitalClock(); 
+            setInterval(updateDigitalClock, 1);
+        </script>
+        MANAGE BELL EVENTS
+        <a href="">settings</a>
+    </div>
+</head>
+<body>
+    <div class="current-alarms">
+     <ol>
+             <li>
+             
+         </li>
+     </ol>
+    </div>
+    <footer>
+        <center>
+            <a href="ADD NEW EVENT.html">
+                <button id="weka-alarm" class="bottom">
+                    <b>
+                        <h1>
+                            +
+                        </h1>
+                    </b>
+                </button>
+            </a>
+        </center>
+    </footer>
+</body>
+</html>
